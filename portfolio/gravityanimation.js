@@ -24,9 +24,9 @@ const container_height = render.options.height;
 // Create a static boundaries
  const boundaries = [
   //Bodies.rectangle(container_width / 2, 0, container_width, 1, { isStatic: true }), // Top
-  Bodies.rectangle(0, container_height / 2, 1, container_height, { isStatic: true, render:{ fill: "transparent"} }), // Left
-  Bodies.rectangle(container_width, container_height / 2, 1, container_height, { isStatic: true, render:{ fill: "transparent"}}), // Right
-  Bodies.rectangle(container_width / 2, container_height, container_width, 1, { isStatic: true, render:{ fill: "transparent"} }), // Bottom
+  Bodies.rectangle(0, container_height / 2, 1, container_height, { isStatic: true, render:{ color: "transparent"} }), // Left
+  Bodies.rectangle(container_width, container_height / 2, 1, container_height, { isStatic: true, render:{ color: "transparent"}}), // Right
+  Bodies.rectangle(container_width / 2, container_height, container_width, 1, { isStatic: true, render:{ color: "transparent"} }), // Bottom
 ];
 World.add(world, boundaries);
 
