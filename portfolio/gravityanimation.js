@@ -1,6 +1,5 @@
-
 // Create Matter.js engine and world
-const { Engine, Render, Runner, Bodies, Body, World, Events } = Matter;
+const { Engine, Render, Runner, Bodies, Body, World, Events} = Matter;
 const engine = Engine.create();
 const world = engine.world;
 
@@ -65,15 +64,19 @@ const btnBlueBody = createRoundedRectangle(400, 300, btnBlueDiv.offsetWidth - bt
 const btnRedDiv = document.getElementById("fallingButtonRed");
 const btnRedBody = createRoundedRectangle(700, 200, btnRedDiv.offsetWidth - btnRedDiv.offsetHeight, btnRedDiv.offsetHeight, btnRedDiv.offsetHeight/2);
 
-const divs = [imgSDiv, btnBlueDiv, btnRedDiv];
-const bodies = [imgSBody, btnBlueBody, btnRedBody];
+const blueCircleDiv = document.getElementById("fallingCircleBlue");
+const blueCircleBody = Bodies.circle(500, 200, 60,  { isStatic: true, restitution: 0.3, angularDamping: 0.5, render: { visible: false } });
+
+const redCircleDiv = document.getElementById("fallingCircleRed");
+const redCircleBody = Bodies.circle(900, 100, 40,  { isStatic: true, restitution: 0.3, angularDamping: 0.5, render: { visible: false } });
+
+const divs = [imgSDiv, btnBlueDiv, btnRedDiv, blueCircleDiv, redCircleDiv];
+const bodies = [imgSBody, btnBlueBody, btnRedBody, blueCircleBody, redCircleBody];
 
 const initialPositions = bodies.map(body => ({ x: body.position.x, y: body.position.y }));
 const bodySizes = bodies.map(body => ({ width: body.bounds.max.x - body.bounds.min.x, height: body.bounds.max.y - body.bounds.min.y }));
 
 World.add(world, bodies);
-
-
 
 
 // Button Logic
