@@ -177,7 +177,7 @@ function dropBodies() {
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.create({
   trigger: container, // The element to watch
-  start: "top 30%", // When the top of container reaches 75% of the viewport
+  start: "top 50%", // When the top of container reaches 75% of the viewport
   once: true, // Trigger only once
   onEnter: () => dropBodies() // Call drop function when scrolled into view
 });
