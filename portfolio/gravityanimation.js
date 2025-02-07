@@ -47,7 +47,7 @@ function createRoundedRectangle(x, y, width, height, cornerRadius) {
     restitution: 0,
     friction: 1,
     density: 1,
-    inertia: 1000,
+    inertia: 5000,
     frictionAir: 0.05,
     render: { visible: false }
   });
@@ -132,7 +132,7 @@ while (failedAttempts < maxFailures) {
         isStatic: true,
         restitution: 0,
         friction: 1,
-        density: 0.9, 
+        density: 1, 
         inertia: Infinity,
         frictionAir: 0.05,
         render: { visible: false }
@@ -177,7 +177,7 @@ function dropBodies() {
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.create({
   trigger: container, // The element to watch
-  start: "top 50%", // When the top of container reaches 75% of the viewport
+  start: "top 30%", // When the top of container reaches 75% of the viewport
   once: true, // Trigger only once
   onEnter: () => dropBodies() // Call drop function when scrolled into view
 });
@@ -186,8 +186,8 @@ ScrollTrigger.create({
 const dropButton = document.getElementById("resetGravityButton");
 
 dropButton.addEventListener("click", () => {
-    gsap.to("#resetGravityButton", { rotation: "+=360", duration: 0.5, ease: "power2.inOut" });
-
+		gsap.to("#resetGravityButton", { rotation: "+=360", duration: 0.5, ease: "power2.inOut" });
+    
     // Reset Bodies
     bodies.forEach((body, index) => {
       Body.setPosition(body, initialPositions[index]);
