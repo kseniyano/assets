@@ -183,7 +183,7 @@ ScrollTrigger.create({
 });
 
 // Reset Button Logic
-const dropButton = document.getElementById("resetButton");
+const dropButton = document.getElementById("resetGravityButton");
 
 dropButton.addEventListener("click", () => {
     // Reset Bodies
