@@ -186,6 +186,8 @@ ScrollTrigger.create({
 const dropButton = document.getElementById("resetGravityButton");
 
 dropButton.addEventListener("click", () => {
+    gsap.to("#resetGravityButton", { rotation: "+=360", duration: 0.5, ease: "power2.inOut" });
+
     // Reset Bodies
     bodies.forEach((body, index) => {
       Body.setPosition(body, initialPositions[index]);
